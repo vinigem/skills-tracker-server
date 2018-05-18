@@ -1,11 +1,13 @@
 package com.vini.skillstracker.service.impl;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vini.skillstracker.AppConstant;
 import com.vini.skillstracker.dao.ISkillDao;
+import com.vini.skillstracker.dto.SkillDTO;
 import com.vini.skillstracker.model.Skill;
 import com.vini.skillstracker.service.ISequenceService;
 import com.vini.skillstracker.service.ISkillService;
@@ -20,9 +22,13 @@ public class SkillService implements ISkillService {
 	private ISkillDao skillDao;
 
 	@Override
-	public String addSkill(Skill skill) {
+	public String addSkill(SkillDTO skillDto) {
 		String status = null;
 		try {
+
+			Skill skill = new Skill();
+			BeanUtils.copyProperties(skillDto, skill);
+
 			Long skillId = sequenceService.getNextSequence("Skill");
 			skill.setSkillId(skillId);
 
@@ -39,9 +45,13 @@ public class SkillService implements ISkillService {
 	}
 
 	@Override
-	public String updateSkill(Skill skill) {
+	public String updateSkill(SkillDTO skillDto) {
 		String status = null;
 		try {
+
+			Skill skill = new Skill();
+			BeanUtils.copyProperties(skillDto, skill);
+
 			skillDao.save(skill);
 			status = AppConstant.SUCCESS;
 
