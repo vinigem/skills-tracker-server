@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @SpringBootApplication
 @Configuration
-@EnableMongoAuditing(auditorAwareRef = "com.vini.skillstracker.UserAuditing")
+@EnableMongoAuditing(auditorAwareRef = "auditor")
 @Import({ AppConfig.class, AspectConfig.class })
 public class Application {
 
