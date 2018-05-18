@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -18,7 +20,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @SpringBootApplication
 @Configuration
-@EnableMongoAuditing(auditorAwareRef = "auditor")
+@EnableMongoAuditing
+@EnableMongoRepositories
 @Import({ AppConfig.class, AspectConfig.class })
 public class Application {
 
@@ -34,6 +37,11 @@ public class Application {
 				registry.addMapping("/**").allowedOrigins("*").allowedMethods("*").allowedHeaders("*");
 			}
 		};
+	}
+
+	@Bean
+	public AuditorAware<String> myAuditorProvider() {
+		return new UserAuditing();
 	}
 
 }
