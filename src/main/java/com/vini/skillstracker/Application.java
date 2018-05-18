@@ -11,16 +11,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.vini.skillstracker.config.AppConfig;
+import com.vini.skillstracker.config.AspectConfig;
 
 /**
  * The main application class
+ * 
  * @author Vinit Kumar
  *
  */
 @SpringBootApplication
 @Configuration
 @EnableMongoAuditing
-@Import({AppConfig.class})
+@Import({ AppConfig.class, AspectConfig.class })
 public class Application {
 
 	public static void main(String[] args) {

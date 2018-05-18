@@ -3,7 +3,14 @@
  */
 package com.vini.skillstracker.model;
 
+import java.io.Serializable;
+import java.time.Instant;
+
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,7 +19,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document(collection = "skill")
-public class Skill extends BaseModel {
+public class Skill implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,6 +28,18 @@ public class Skill extends BaseModel {
 
 	@Indexed(unique = true, name = "skillName")
 	private String skillName;
+
+	@CreatedBy
+	private String createdBy;
+
+	@CreatedDate
+	private Instant createdOn;
+
+	@LastModifiedBy
+	private String lastUpdatedBy;
+
+	@LastModifiedDate
+	private Instant lastUpdatedOn;
 
 	/**
 	 * @return the skillId
@@ -59,7 +78,8 @@ public class Skill extends BaseModel {
 	 */
 	@Override
 	public String toString() {
-		return "Skill [skillId=" + skillId + ", skillName=" + skillName + ", toString()=" + super.toString() + "]";
+		return "Skill [skillId=" + skillId + ", skillName=" + skillName + ", createdBy=" + createdBy + ", createdOn="
+				+ createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn + "]";
 	}
 
 }
