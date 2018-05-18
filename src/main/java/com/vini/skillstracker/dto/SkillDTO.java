@@ -13,37 +13,37 @@ public class SkillDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
-	private String name;
+	private Long skillId;
+	private String skillName;
 
 	/**
-	 * @return the id
+	 * @return the skillId
 	 */
-	public Long getId() {
-		return id;
+	public Long getSkillId() {
+		return skillId;
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param skillId
+	 *            the skillId to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setSkillId(Long skillId) {
+		this.skillId = skillId;
 	}
 
 	/**
-	 * @return the name
+	 * @return the skillName
 	 */
-	public String getName() {
-		return name;
+	public String getSkillName() {
+		return skillName;
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param skillName
+	 *            the skillName to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setSkillName(String skillName) {
+		this.skillName = skillName;
 	}
 
 	/*
@@ -53,7 +53,7 @@ public class SkillDTO implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "SkillDTO [id=" + id + ", name=" + name + "]";
+		return "SkillDTO [skillId=" + skillId + ", skillName=" + skillName + "]";
 	}
 
 }

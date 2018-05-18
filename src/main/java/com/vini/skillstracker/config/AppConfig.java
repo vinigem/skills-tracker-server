@@ -1,4 +1,4 @@
-package com.vini.skillstracker;
+package com.vini.skillstracker.config;
 
 import org.springframework.context.annotation.Configuration;
 
