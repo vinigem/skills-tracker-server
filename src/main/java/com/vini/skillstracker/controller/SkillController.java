@@ -1,5 +1,7 @@
 package com.vini.skillstracker.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +33,8 @@ public class SkillController {
 	 * @return status
 	 */
 	@RequestMapping(value = "/add-skill", method = RequestMethod.POST)
-	public @ResponseBody String addSkill(@RequestBody SkillDTO skillDto) {
-		return skillService.addSkill(skillDto);
+	public @ResponseBody String addSkill(@RequestBody SkillDTO skillDTO) {
+		return skillService.addSkill(skillDTO);
 	}
 
 	/**
@@ -43,8 +45,8 @@ public class SkillController {
 	 * @return status
 	 */
 	@RequestMapping(value = "/update-skill", method = RequestMethod.POST)
-	public @ResponseBody String updateSkill(@RequestBody SkillDTO skillDto) {
-		return skillService.updateSkill(skillDto);
+	public @ResponseBody String updateSkill(@RequestBody SkillDTO skillDTO) {
+		return skillService.updateSkill(skillDTO);
 	}
 
 	/**
@@ -57,6 +59,16 @@ public class SkillController {
 	@RequestMapping(value = "/delete-skill", method = RequestMethod.POST)
 	public @ResponseBody String deleteSkill(@RequestBody Long skillId) {
 		return skillService.deleteSkill(skillId);
+	}
+
+	/**
+	 * View all skills
+	 * 
+	 * @return skills
+	 */
+	@RequestMapping(value = "/view-all-skills", method = RequestMethod.GET)
+	public @ResponseBody List<SkillDTO> viewAllSkills() {
+		return skillService.viewAllSkills();
 	}
 
 }

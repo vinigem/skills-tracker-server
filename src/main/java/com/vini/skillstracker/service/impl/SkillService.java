@@ -1,5 +1,8 @@
 package com.vini.skillstracker.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
@@ -22,12 +25,12 @@ public class SkillService implements ISkillService {
 	private ISkillDao skillDao;
 
 	@Override
-	public String addSkill(SkillDTO skillDto) {
+	public String addSkill(SkillDTO skillDTO) {
 		String status = null;
 		try {
 
 			Skill skill = new Skill();
-			BeanUtils.copyProperties(skillDto, skill);
+			BeanUtils.copyProperties(skillDTO, skill);
 
 			Long skillId = sequenceService.getNextSequence("Skill");
 			skill.setSkillId(skillId);
@@ -45,12 +48,12 @@ public class SkillService implements ISkillService {
 	}
 
 	@Override
-	public String updateSkill(SkillDTO skillDto) {
+	public String updateSkill(SkillDTO skillDTO) {
 		String status = null;
 		try {
 
 			Skill skill = new Skill();
-			BeanUtils.copyProperties(skillDto, skill);
+			BeanUtils.copyProperties(skillDTO, skill);
 
 			skillDao.save(skill);
 			status = AppConstant.SUCCESS;
@@ -75,6 +78,23 @@ public class SkillService implements ISkillService {
 			status = AppConstant.FAILURE;
 		}
 		return status;
+	}
+
+	@Override
+	public List<SkillDTO> viewAllSkills() {
+		List<SkillDTO> skillDTOList = new ArrayList<>();
+		try {
+			List<Skill> skills = skillDao.findAll();
+
+			for (Skill skill : skills) {
+				SkillDTO skillDTO = new SkillDTO();
+				BeanUtils.copyProperties(skill, skillDTO);
+				skillDTOList.add(skillDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return skillDTOList;
 	}
 
 }

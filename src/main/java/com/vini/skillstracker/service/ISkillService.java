@@ -1,13 +1,17 @@
 package com.vini.skillstracker.service;
 
+import java.util.List;
+
 import com.vini.skillstracker.dto.SkillDTO;
 
 public interface ISkillService {
 	
-	String addSkill(SkillDTO skillDto);
+	String addSkill(SkillDTO skillDTO);
 	
-	String updateSkill(SkillDTO skillDto);
+	String updateSkill(SkillDTO skillDTO);
 	
-	String deleteSkill(Long skillDto);
+	String deleteSkill(Long skillId);
+	
+	List<SkillDTO> viewAllSkills();
 
 }
