@@ -10,9 +10,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.vini.skillstracker.config.AppConfig;
-import com.vini.skillstracker.config.AspectConfig;
-
 /**
  * The main application class
  * 
@@ -21,7 +18,7 @@ import com.vini.skillstracker.config.AspectConfig;
  */
 @SpringBootApplication
 @Configuration
-@EnableMongoAuditing
+@EnableMongoAuditing(auditorAwareRef = "com.vini.skillstracker.UserAuditing")
 @Import({ AppConfig.class, AspectConfig.class })
 public class Application {
 

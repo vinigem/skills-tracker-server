@@ -4,7 +4,7 @@
 package com.vini.skillstracker.dto;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 /**
  * @author kumarv19
@@ -17,9 +17,9 @@ public class SkillDTO implements Serializable {
 	private Long skillId;
 	private String skillName;
 	private String createdBy;
-	private Instant createdOn;
+	private Date createdOn;
 	private String lastUpdatedBy;
-	private Instant lastUpdatedOn;
+	private Date lastUpdatedOn;
 
 	/**
 	 * @return the skillId
@@ -69,7 +69,7 @@ public class SkillDTO implements Serializable {
 	/**
 	 * @return the createdOn
 	 */
-	public Instant getCreatedOn() {
+	public Date getCreatedOn() {
 		return createdOn;
 	}
 
@@ -77,7 +77,7 @@ public class SkillDTO implements Serializable {
 	 * @param createdOn
 	 *            the createdOn to set
 	 */
-	public void setCreatedOn(Instant createdOn) {
+	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
 	}
 
@@ -99,7 +99,7 @@ public class SkillDTO implements Serializable {
 	/**
 	 * @return the lastUpdatedOn
 	 */
-	public Instant getLastUpdatedOn() {
+	public Date getLastUpdatedOn() {
 		return lastUpdatedOn;
 	}
 
@@ -107,7 +107,7 @@ public class SkillDTO implements Serializable {
 	 * @param lastUpdatedOn
 	 *            the lastUpdatedOn to set
 	 */
-	public void setLastUpdatedOn(Instant lastUpdatedOn) {
+	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
 

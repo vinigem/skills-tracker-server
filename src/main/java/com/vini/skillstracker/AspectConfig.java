@@ -1,4 +1,4 @@
-package com.vini.skillstracker.config;
+package com.vini.skillstracker;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

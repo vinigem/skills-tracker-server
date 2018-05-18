@@ -1,4 +1,4 @@
-package com.vini.skillstracker.config;
+package com.vini.skillstracker;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

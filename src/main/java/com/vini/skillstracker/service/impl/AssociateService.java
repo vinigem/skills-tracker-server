@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
-import com.vini.skillstracker.config.AppConstant;
+import com.vini.skillstracker.AppConstant;
 import com.vini.skillstracker.dao.IAssociateDao;
 import com.vini.skillstracker.model.Associate;
 import com.vini.skillstracker.service.IAssociateService;
