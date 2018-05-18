@@ -19,7 +19,7 @@ public class Skill extends BaseModel {
 	@Id
 	private Long skillId;
 
-	@Indexed(unique = true)
+	@Indexed(unique = true, name = "skillName")
 	private String skillName;
 
 	/**

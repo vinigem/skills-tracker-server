@@ -1,16 +1,27 @@
 package com.vini.skillstracker.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.Instant;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 public class BaseModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@CreatedBy
 	private String createdBy;
-	private Date createdOn;
+	
+	@CreatedDate
+	private Instant createdOn;
+	
+	@LastModifiedBy
 	private String lastUpdatedBy;
-	private Date lastUpdatedOn;
+	
+	@LastModifiedDate
+	private Instant lastUpdatedOn;
 
 	/**
 	 * @return the createdBy
@@ -30,7 +41,7 @@ public class BaseModel implements Serializable {
 	/**
 	 * @return the createdOn
 	 */
-	public Date getCreatedOn() {
+	public Instant getCreatedOn() {
 		return createdOn;
 	}
 
@@ -38,7 +49,7 @@ public class BaseModel implements Serializable {
 	 * @param createdOn
 	 *            the createdOn to set
 	 */
-	public void setCreatedOn(Date createdOn) {
+	public void setCreatedOn(Instant createdOn) {
 		this.createdOn = createdOn;
 	}
 
@@ -60,7 +71,7 @@ public class BaseModel implements Serializable {
 	/**
 	 * @return the lastUpdatedOn
 	 */
-	public Date getLastUpdatedOn() {
+	public Instant getLastUpdatedOn() {
 		return lastUpdatedOn;
 	}
 
@@ -68,7 +79,7 @@ public class BaseModel implements Serializable {
 	 * @param lastUpdatedOn
 	 *            the lastUpdatedOn to set
 	 */
-	public void setLastUpdatedOn(Date lastUpdatedOn) {
+	public void setLastUpdatedOn(Instant lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
 
@@ -82,5 +93,5 @@ public class BaseModel implements Serializable {
 		return "BaseModel [createdBy=" + createdBy + ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy
 				+ ", lastUpdatedOn=" + lastUpdatedOn + "]";
 	}
-
+	
 }
