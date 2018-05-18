@@ -4,7 +4,8 @@
 package com.vini.skillstracker.model;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
+
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -32,13 +33,13 @@ public class Skill implements Serializable {
 	private String createdBy;
 
 	@CreatedDate
-	private Instant createdOn;
+	private Date createdOn;
 
 	@LastModifiedBy
 	private String lastUpdatedBy;
 
 	@LastModifiedDate
-	private Instant lastUpdatedOn;
+	private Date lastUpdatedOn;
 
 	/**
 	 * @return the skillId
@@ -88,7 +89,7 @@ public class Skill implements Serializable {
 	/**
 	 * @return the createdOn
 	 */
-	public Instant getCreatedOn() {
+	public Date getCreatedOn() {
 		return createdOn;
 	}
 
@@ -96,7 +97,7 @@ public class Skill implements Serializable {
 	 * @param createdOn
 	 *            the createdOn to set
 	 */
-	public void setCreatedOn(Instant createdOn) {
+	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
 	}
 
@@ -118,7 +119,7 @@ public class Skill implements Serializable {
 	/**
 	 * @return the lastUpdatedOn
 	 */
-	public Instant getLastUpdatedOn() {
+	public Date getLastUpdatedOn() {
 		return lastUpdatedOn;
 	}
 
@@ -126,7 +127,7 @@ public class Skill implements Serializable {
 	 * @param lastUpdatedOn
 	 *            the lastUpdatedOn to set
 	 */
-	public void setLastUpdatedOn(Instant lastUpdatedOn) {
+	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
 
