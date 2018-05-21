@@ -11,6 +11,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -25,7 +26,10 @@ public class Associate implements Serializable {
 	@Id
 	private Long associateId;
 	private String name;
+	
+	@Indexed(unique = true, name = "email")
 	private String email;
+	
 	private Long mobile;
 	private String pic;
 	private String status;
