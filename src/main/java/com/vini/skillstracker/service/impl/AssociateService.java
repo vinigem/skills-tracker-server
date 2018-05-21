@@ -37,7 +37,7 @@ public class AssociateService implements IAssociateService {
 		try {
 			Associate associate = new Associate();
 			BeanUtils.copyProperties(associateDTO, associate);
-						
+			System.out.println(associate);			
 			Associate savedAssociate = associateDao.save(associate);
 			
 			List<AssociateSkill> associateSkills = new ArrayList<AssociateSkill>();
@@ -46,6 +46,7 @@ public class AssociateService implements IAssociateService {
 				BeanUtils.copyProperties(associateSkillDTO, associateSkill);
 				associateSkill.setAssociateId(savedAssociate.getAssociateId());
 				associateSkills.add(associateSkill);
+				System.out.println(associateSkill);
 			}
 			
 			boolean success = associateSkillService.saveAssociateSkills(associateSkills);
