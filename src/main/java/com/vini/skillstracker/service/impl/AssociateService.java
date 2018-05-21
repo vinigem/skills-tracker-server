@@ -38,13 +38,12 @@ public class AssociateService implements IAssociateService {
 			Associate associate = new Associate();
 			BeanUtils.copyProperties(associateDTO, associate);
 						
-			Associate savedAssociate = associateDao.save(associate);
+			associateDao.save(associate);
 			
 			List<AssociateSkill> associateSkills = new ArrayList<AssociateSkill>();
 			for(AssociateSkillDTO associateSkillDTO: associateDTO.getAssociateSkills()) {
 				AssociateSkill associateSkill = new AssociateSkill();
 				BeanUtils.copyProperties(associateSkillDTO, associateSkill);
-				associateSkill.setAssociateId(savedAssociate.getAssociateId());
 				associateSkills.add(associateSkill);
 			}
 			
