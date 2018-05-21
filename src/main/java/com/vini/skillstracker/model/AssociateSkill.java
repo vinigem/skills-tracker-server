@@ -23,6 +23,7 @@ public class AssociateSkill implements Serializable {
 	private Long id;
 	private Long associateId;
 	private Long skillId;
+	private int value;
 
 	@CreatedBy
 	private String createdBy;
@@ -79,6 +80,21 @@ public class AssociateSkill implements Serializable {
 	 */
 	public void setSkillId(Long skillId) {
 		this.skillId = skillId;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public int getValue() {
+		return value;
+	}
+
+	/**
+	 * @param value
+	 *            the value to set
+	 */
+	public void setValue(int value) {
+		this.value = value;
 	}
 
 	/**
@@ -148,9 +164,9 @@ public class AssociateSkill implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "AssociateSkill [id=" + id + ", associateId=" + associateId + ", skillId=" + skillId + ", createdBy="
-				+ createdBy + ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn="
-				+ lastUpdatedOn + "]";
+		return "AssociateSkill [id=" + id + ", associateId=" + associateId + ", skillId=" + skillId + ", value=" + value
+				+ ", createdBy=" + createdBy + ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy
+				+ ", lastUpdatedOn=" + lastUpdatedOn + "]";
 	}
 
 }

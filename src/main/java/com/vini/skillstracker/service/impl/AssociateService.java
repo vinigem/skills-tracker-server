@@ -1,14 +1,19 @@
 package com.vini.skillstracker.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vini.skillstracker.AppConstant;
 import com.vini.skillstracker.dao.IAssociateDao;
+import com.vini.skillstracker.dto.AssociateDTO;
+import com.vini.skillstracker.dto.AssociateSkillDTO;
 import com.vini.skillstracker.model.Associate;
+import com.vini.skillstracker.model.AssociateSkill;
 import com.vini.skillstracker.service.IAssociateService;
 import com.vini.skillstracker.service.IAssociateSkillService;
 
@@ -27,11 +32,25 @@ public class AssociateService implements IAssociateService {
 	 * @return status
 	 */
 	@Override
-	public String addAssociate(Associate associate) {
+	public String addAssociate(AssociateDTO associateDTO) {
 		String status = null;
 		try {
-			associateDao.save(associate);
-			status = AppConstant.SUCCESS;
+			Associate associate = new Associate();
+			BeanUtils.copyProperties(associateDTO, associate);
+						
+			Associate savedAssociate = associateDao.save(associate);
+			
+			List<AssociateSkill> associateSkills = new ArrayList<AssociateSkill>();
+			for(AssociateSkillDTO associateSkillDTO: associateDTO.getAssociateSkills()) {
+				AssociateSkill associateSkill = new AssociateSkill();
+				BeanUtils.copyProperties(associateSkillDTO, associateSkill);
+				associateSkill.setAssociateId(savedAssociate.getAssociateId());
+				associateSkills.add(associateSkill);
+			}
+			
+			boolean success = associateSkillService.saveAssociateSkills(associateSkills);
+			
+			status = success ? AppConstant.SUCCESS: AppConstant.FAILURE;
 
 		} catch (DuplicateKeyException de) {
 			status = AppConstant.EXIST;
