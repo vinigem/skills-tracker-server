@@ -62,12 +62,12 @@ public class SkillController {
 	}
 
 	/**
-	 * find all skills
+	 * get all skills
 	 * 
 	 * @return skills
 	 */
-	@RequestMapping(value = "/view-all-skills", method = RequestMethod.GET)
-	public @ResponseBody List<SkillDTO> viewAllSkills() {
+	@RequestMapping(value = "/find-all-skills", method = RequestMethod.GET)
+	public @ResponseBody List<SkillDTO> findAllSkills() {
 		return skillService.findAllSkills();
 	}
 

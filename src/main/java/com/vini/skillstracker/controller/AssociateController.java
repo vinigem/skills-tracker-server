@@ -1,5 +1,7 @@
 package com.vini.skillstracker.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,9 +55,19 @@ public class AssociateController {
 	 * @param associateId
 	 * @return associate
 	 */
-	@RequestMapping(value = "/get-associate", method = RequestMethod.POST)
-	public @ResponseBody AssociateDTO getAssociate(@RequestBody Long associateId) {
+	@RequestMapping(value = "/find-associate", method = RequestMethod.POST)
+	public @ResponseBody AssociateDTO findAssociate(@RequestBody Long associateId) {
 		return associateService.findByAssociateId(associateId);
+	}
+	
+	/**
+	 * get all associates
+	 * 
+	 * @return associates
+	 */
+	@RequestMapping(value = "/find-all-associates", method = RequestMethod.GET)
+	public @ResponseBody List<AssociateDTO> findAllAssociates() {
+		return associateService.findAllAssociates();
 	}
 
 }
