@@ -12,6 +12,6 @@ public interface ISkillService {
 	
 	String deleteSkill(Long skillId);
 	
-	List<SkillDTO> viewAllSkills();
+	List<SkillDTO> findAllSkills();
 
 }

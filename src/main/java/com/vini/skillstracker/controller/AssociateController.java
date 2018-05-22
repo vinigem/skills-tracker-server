@@ -31,10 +31,31 @@ public class AssociateController {
 	 * @return status
 	 */
 	@RequestMapping(value = "/add-associate", method = RequestMethod.POST)
-	public @ResponseBody String addSkill(@RequestBody AssociateDTO associateDTO) {
+	public @ResponseBody String addAssociate(@RequestBody AssociateDTO associateDTO) {
 		return associateService.addAssociate(associateDTO);
 	}
-
 	
+	/**
+	 * Update an Associate
+	 * 
+	 * @param associateDTO
+	 *            the associate dto
+	 * @return status
+	 */
+	@RequestMapping(value = "/update-associate", method = RequestMethod.POST)
+	public @ResponseBody String updateAssociate(@RequestBody AssociateDTO associateDTO) {
+		return associateService.updateAssociate(associateDTO);
+	}
+
+	/**
+	 * find an Associate
+	 * 
+	 * @param associateId
+	 * @return associate
+	 */
+	@RequestMapping(value = "/get-associate", method = RequestMethod.POST)
+	public @ResponseBody AssociateDTO getAssociate(@RequestBody Long associateId) {
+		return associateService.findByAssociateId(associateId);
+	}
 
 }

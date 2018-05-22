@@ -14,12 +14,28 @@ public class SkillDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private Long skillId;
 	private String skillName;
 	private String createdBy;
 	private Date createdOn;
 	private String lastUpdatedBy;
 	private Date lastUpdatedOn;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the skillId
@@ -118,8 +134,9 @@ public class SkillDTO implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "SkillDTO [skillId=" + skillId + ", skillName=" + skillName + ", createdBy=" + createdBy + ", createdOn="
-				+ createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn + "]";
+		return "SkillDTO [id=" + id + ", skillId=" + skillId + ", skillName=" + skillName + ", createdBy=" + createdBy
+				+ ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn
+				+ "]";
 	}
 
 }

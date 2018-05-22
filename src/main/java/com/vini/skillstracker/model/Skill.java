@@ -24,6 +24,9 @@ public class Skill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	private String id;
+
+	@Indexed(unique = true, name = "skillId")
 	private Long skillId;
 
 	@Indexed(unique = true, name = "skillName")
@@ -40,6 +43,21 @@ public class Skill implements Serializable {
 
 	@LastModifiedDate
 	private Date lastUpdatedOn;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the skillId

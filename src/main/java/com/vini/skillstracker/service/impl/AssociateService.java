@@ -28,7 +28,7 @@ public class AssociateService implements IAssociateService {
 
 	/**
 	 * method to save associate
-	 * @param associate the Associate model
+	 * @param associateDTO the Associate dto
 	 * @return status
 	 */
 	@Override
@@ -62,13 +62,16 @@ public class AssociateService implements IAssociateService {
 
 	/**
 	 * method to update associate
-	 * @param associate the associate
+	 * @param associateDTO the associate dto
 	 * @return status
 	 */
 	@Override
-	public String updateAssociate(Associate associate) {
+	public String updateAssociate(AssociateDTO associateDTO) {
 		String status = null;
 		try {
+			Associate associate = new Associate();
+			BeanUtils.copyProperties(associateDTO, associate);
+			
 			associateDao.save(associate);
 			status = AppConstant.SUCCESS;
 
@@ -90,7 +93,7 @@ public class AssociateService implements IAssociateService {
 	public String deleteAssociate(Long associateId) {
 		String status = null;
 		try {
-			associateDao.delete(associateId);
+			associateDao.deleteByAssociateId(associateId);
 			status = AppConstant.SUCCESS;
 
 		} catch (Exception e) {
@@ -105,8 +108,11 @@ public class AssociateService implements IAssociateService {
 	 * @return associate
 	 */
 	@Override
-	public Associate viewAssociate(Long associateId) {
-		return associateDao.findOne(associateId);
+	public AssociateDTO findByAssociateId(Long associateId) {
+		Associate associate = associateDao.findByAssociateId(associateId);
+		AssociateDTO associateDTO = new AssociateDTO();
+		BeanUtils.copyProperties(associate, associateDTO);
+		return associateDTO;
 	}
 
 	/**
@@ -114,8 +120,18 @@ public class AssociateService implements IAssociateService {
 	 * @return associates
 	 */
 	@Override
-	public List<Associate> viewAllAssociates() {
-		return associateDao.findAll();
+	public List<AssociateDTO> findAllAssociates() {
+		List<AssociateDTO> associateDTOs = new ArrayList<AssociateDTO>();
+		
+		List<Associate> associates = associateDao.findAll();
+		
+		for (Associate associate : associates) {
+			AssociateDTO associateDTO = new AssociateDTO();
+			BeanUtils.copyProperties(associate, associateDTO);
+			associateDTOs.add(associateDTO);
+		}
+		
+		return associateDTOs;
 	}
 
 	/**
@@ -124,8 +140,18 @@ public class AssociateService implements IAssociateService {
 	 * @return associates
 	 */
 	@Override
-	public List<Associate> searchByName(String name) {
-		return associateDao.findByNameIgnoreCaseContaining(name);
+	public List<AssociateDTO> searchByName(String name) {
+		List<AssociateDTO> associateDTOs = new ArrayList<AssociateDTO>();
+		
+		List<Associate> associates = associateDao.findByNameIgnoreCaseContaining(name);
+		
+		for (Associate associate : associates) {
+			AssociateDTO associateDTO = new AssociateDTO();
+			BeanUtils.copyProperties(associate, associateDTO);
+			associateDTOs.add(associateDTO);
+		}
+		
+		return associateDTOs;
 	}
 
 	/**
@@ -134,8 +160,18 @@ public class AssociateService implements IAssociateService {
 	 * @return associates
 	 */
 	@Override
-	public List<Associate> searchByStrongSkills(String skillName) {
-		return associateDao.findByStrengthIgnoreCaseContaining(skillName);
+	public List<AssociateDTO> searchByStrongSkills(String skillName) {
+		List<AssociateDTO> associateDTOs = new ArrayList<AssociateDTO>();
+		
+		List<Associate> associates = associateDao.findByStrengthIgnoreCaseContaining(skillName);
+		
+		for (Associate associate : associates) {
+			AssociateDTO associateDTO = new AssociateDTO();
+			BeanUtils.copyProperties(associate, associateDTO);
+			associateDTOs.add(associateDTO);
+		}
+		
+		return associateDTOs;
 	}
 
 	/**
@@ -144,8 +180,14 @@ public class AssociateService implements IAssociateService {
 	 * @return associate
 	 */
 	@Override
-	public Associate searchByMobile(Long mobile) {
-		return associateDao.findByMobile(mobile);
+	public AssociateDTO searchByMobile(Long mobile) {
+		AssociateDTO associateDTO = new AssociateDTO();
+		
+		Associate associate = associateDao.findByMobile(mobile);
+		
+		BeanUtils.copyProperties(associate, associateDTO);
+		
+		return associateDTO;
 	}
 
 	/**
@@ -154,8 +196,14 @@ public class AssociateService implements IAssociateService {
 	 * @return associate
 	 */
 	@Override
-	public Associate searchByEmail(String email) {
-		return associateDao.findByEmail(email);
+	public AssociateDTO searchByEmail(String email) {
+		AssociateDTO associateDTO = new AssociateDTO();
+		
+		Associate associate = associateDao.findByEmail(email);
+		
+		BeanUtils.copyProperties(associate, associateDTO);
+		
+		return associateDTO;
 	}
 
 }

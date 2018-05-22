@@ -71,7 +71,7 @@ public class SkillService implements ISkillService {
 	public String deleteSkill(Long skillId) {
 		String status = null;
 		try {
-			skillDao.delete(skillId);
+			skillDao.deleteBySkillId(skillId);
 			status = AppConstant.SUCCESS;
 
 		} catch (Exception e) {
@@ -81,7 +81,7 @@ public class SkillService implements ISkillService {
 	}
 
 	@Override
-	public List<SkillDTO> viewAllSkills() {
+	public List<SkillDTO> findAllSkills() {
 		List<SkillDTO> skillDTOList = new ArrayList<>();
 		try {
 			List<Skill> skills = skillDao.findAll();

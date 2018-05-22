@@ -7,10 +7,12 @@ public class AssociateDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private Long associateId;
 	private String name;
 	private String email;
 	private Long mobile;
+	private String gender;
 	private String pic;
 	private String status;
 	private String level;
@@ -18,6 +20,21 @@ public class AssociateDTO implements Serializable {
 	private String strength;
 	private String weakness;
 	private List<AssociateSkillDTO> associateSkills;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the associateId
@@ -77,6 +94,21 @@ public class AssociateDTO implements Serializable {
 	 */
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
+	}
+
+	/**
+	 * @return the gender
+	 */
+	public String getGender() {
+		return gender;
+	}
+
+	/**
+	 * @param gender
+	 *            the gender to set
+	 */
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	/**
@@ -191,9 +223,10 @@ public class AssociateDTO implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "AssociateDTO [associateId=" + associateId + ", name=" + name + ", email=" + email + ", mobile=" + mobile
-				+ ", pic=" + pic + ", status=" + status + ", level=" + level + ", remarks=" + remarks
-				+ ", strength=" + strength + ", weakness=" + weakness + ", associateSkills=" + associateSkills + "]";
+		return "AssociateDTO [id=" + id + ", associateId=" + associateId + ", name=" + name + ", email=" + email
+				+ ", mobile=" + mobile + ", gender=" + gender + ", pic=" + pic + ", status=" + status + ", level="
+				+ level + ", remarks=" + remarks + ", strength=" + strength + ", weakness=" + weakness
+				+ ", associateSkills=" + associateSkills + "]";
 	}
 
 }

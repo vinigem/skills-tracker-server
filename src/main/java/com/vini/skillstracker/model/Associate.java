@@ -24,13 +24,18 @@ public class Associate implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	private String id;
+
+	@Indexed(unique = true, name = "associateId")
 	private Long associateId;
+
 	private String name;
-	
+
 	@Indexed(unique = true, name = "email")
 	private String email;
-	
+
 	private Long mobile;
+	private String gender;
 	private String pic;
 	private String status;
 	private String level;
@@ -49,6 +54,21 @@ public class Associate implements Serializable {
 
 	@LastModifiedDate
 	private Date lastUpdatedOn;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the associateId
@@ -108,6 +128,21 @@ public class Associate implements Serializable {
 	 */
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
+	}
+
+	/**
+	 * @return the gender
+	 */
+	public String getGender() {
+		return gender;
+	}
+
+	/**
+	 * @param gender
+	 *            the gender to set
+	 */
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	/**
@@ -268,9 +303,10 @@ public class Associate implements Serializable {
 	@Override
 	public String toString() {
 		return "Associate [associateId=" + associateId + ", name=" + name + ", email=" + email + ", mobile=" + mobile
-				+ ", pic=" + pic + ", status=" + status + ", level=" + level + ", remarks=" + remarks + ", strength="
-				+ strength + ", weakness=" + weakness + ", createdBy=" + createdBy + ", createdOn=" + createdOn
-				+ ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn + "]";
+				+ ", gender=" + gender + ", pic=" + pic + ", status=" + status + ", level=" + level + ", remarks="
+				+ remarks + ", strength=" + strength + ", weakness=" + weakness + ", createdBy=" + createdBy
+				+ ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn
+				+ "]";
 	}
 
 }

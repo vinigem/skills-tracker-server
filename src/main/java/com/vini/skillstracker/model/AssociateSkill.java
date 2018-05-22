@@ -20,7 +20,7 @@ public class AssociateSkill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private String id;
 	private Long associateId;
 	private Long skillId;
 	private int value;
@@ -40,7 +40,7 @@ public class AssociateSkill implements Serializable {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -48,7 +48,7 @@ public class AssociateSkill implements Serializable {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
