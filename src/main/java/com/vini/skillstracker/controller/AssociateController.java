@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vini.skillstracker.dto.AssociateDTO;
+import com.vini.skillstracker.dto.AssociateSkillDTO;
 import com.vini.skillstracker.service.IAssociateService;
 
 /**
@@ -36,7 +37,7 @@ public class AssociateController {
 	public @ResponseBody String addAssociate(@RequestBody AssociateDTO associateDTO) {
 		return associateService.addAssociate(associateDTO);
 	}
-	
+
 	/**
 	 * Update an Associate
 	 * 
@@ -57,9 +58,9 @@ public class AssociateController {
 	 */
 	@RequestMapping(value = "/find-associate", method = RequestMethod.POST)
 	public @ResponseBody AssociateDTO findAssociate(@RequestBody Long associateId) {
-		return associateService.findByAssociateId(associateId);
+		return associateService.findAssociate(associateId);
 	}
-	
+
 	/**
 	 * get all associates
 	 * 
@@ -68,6 +69,17 @@ public class AssociateController {
 	@RequestMapping(value = "/find-all-associates", method = RequestMethod.GET)
 	public @ResponseBody List<AssociateDTO> findAllAssociates() {
 		return associateService.findAllAssociates();
+	}
+
+	/**
+	 * find an Associate skills
+	 * 
+	 * @param associateId
+	 * @return associateSkills
+	 */
+	@RequestMapping(value = "/find-associate-skills", method = RequestMethod.POST)
+	public @ResponseBody List<AssociateSkillDTO> findAssociateSkills(@RequestBody Long associateId) {
+		return associateService.findAssociateSkills(associateId);
 	}
 
 }
