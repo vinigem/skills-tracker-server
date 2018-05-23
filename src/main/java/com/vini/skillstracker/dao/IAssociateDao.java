@@ -1,7 +1,5 @@
 package com.vini.skillstracker.dao;
 
-import java.util.List;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.vini.skillstracker.model.Associate;
@@ -13,15 +11,16 @@ import com.vini.skillstracker.model.Associate;
  */
 public interface IAssociateDao extends MongoRepository<Associate, String> {
 
+	/**
+	 * find an associate by associate id
+	 * @param associateId the associate id
+	 * @return associate
+	 */
 	Associate findByAssociateId(Long associateId);
 
-	List<Associate> findByNameIgnoreCaseContaining(String name);
-
-	Associate findByEmail(String email);
-
-	Associate findByMobile(Long mobile);
-
-	List<Associate> findByStrengthIgnoreCaseContaining(String strength);
-
+	/**
+	 * delete an associate by associate id
+	 * @param associateId the associate id
+	 */
 	void deleteByAssociateId(Long associateId);
 }

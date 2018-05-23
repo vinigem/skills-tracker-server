@@ -46,8 +46,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -61,8 +60,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param associateId
-	 *            the associateId to set
+	 * @param associateId the associateId to set
 	 */
 	public void setAssociateId(Long associateId) {
 		this.associateId = associateId;
@@ -76,8 +74,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param skillId
-	 *            the skillId to set
+	 * @param skillId the skillId to set
 	 */
 	public void setSkillId(Long skillId) {
 		this.skillId = skillId;
@@ -91,8 +88,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param value
-	 *            the value to set
+	 * @param value the value to set
 	 */
 	public void setValue(int value) {
 		this.value = value;
@@ -106,8 +102,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param createdBy
-	 *            the createdBy to set
+	 * @param createdBy the createdBy to set
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
@@ -121,8 +116,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param createdOn
-	 *            the createdOn to set
+	 * @param createdOn the createdOn to set
 	 */
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
@@ -136,8 +130,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedBy
-	 *            the lastUpdatedBy to set
+	 * @param lastUpdatedBy the lastUpdatedBy to set
 	 */
 	public void setLastUpdatedBy(String lastUpdatedBy) {
 		this.lastUpdatedBy = lastUpdatedBy;
@@ -151,8 +144,7 @@ public class AssociateSkill implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedOn
-	 *            the lastUpdatedOn to set
+	 * @param lastUpdatedOn the lastUpdatedOn to set
 	 */
 	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;

@@ -37,8 +37,7 @@ public class AssociateService implements IAssociateService {
 	/**
 	 * method to save associate
 	 * 
-	 * @param associateDTO
-	 *            the Associate dto
+	 * @param associateDTO the Associate dto
 	 * @return status
 	 */
 	@Override
@@ -68,8 +67,7 @@ public class AssociateService implements IAssociateService {
 	/**
 	 * method to update associate
 	 * 
-	 * @param associateDTO
-	 *            the associate dto
+	 * @param associateDTO the associate dto
 	 * @return status
 	 */
 	@Override
@@ -99,8 +97,7 @@ public class AssociateService implements IAssociateService {
 	/**
 	 * method to delete associate
 	 * 
-	 * @param associateId
-	 *            the associate id
+	 * @param associateId the associate id
 	 * @return status
 	 */
 	@Override
@@ -123,8 +120,7 @@ public class AssociateService implements IAssociateService {
 	/**
 	 * method to find an associate
 	 * 
-	 * @param associateId
-	 *            the associate id
+	 * @param associateId the associate id
 	 * @return associate
 	 */
 	@Override
@@ -155,6 +151,12 @@ public class AssociateService implements IAssociateService {
 		return associateDTOs;
 	}
 
+	/**
+	 * method to find an associate skills
+	 * 
+	 * @param associateId the associate id
+	 * @return associateSkilss
+	 */
 	@Override
 	public List<AssociateSkillDTO> findAssociateSkills(Long associateId) {
 		return associateSkillService.findAssociateSkills(associateId);

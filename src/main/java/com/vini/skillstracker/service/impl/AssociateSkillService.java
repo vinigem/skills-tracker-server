@@ -15,6 +15,7 @@ import com.vini.skillstracker.service.IAssociateSkillService;
 
 /**
  * AssociatSkilleService implementation
+ * 
  * @author Vinit Kumar
  *
  */
@@ -26,6 +27,12 @@ public class AssociateSkillService implements IAssociateSkillService {
 	@Autowired
 	private IAssociateSkillDao associateSkillDao;
 
+	/**
+	 * method to save an associate skills
+	 * 
+	 * @param associateSkillDTOs the associate skill dtos
+	 * @return status
+	 */
 	@Override
 	public boolean saveAssociateSkills(List<AssociateSkillDTO> associateSkillDTOs) {
 		boolean status = false;
@@ -49,6 +56,12 @@ public class AssociateSkillService implements IAssociateSkillService {
 		return status;
 	}
 
+	/**
+	 * method to find an associate skills
+	 * 
+	 * @param associateId the associate id
+	 * @return skills
+	 */
 	@Override
 	public List<AssociateSkillDTO> findAssociateSkills(Long associateId) {
 		List<AssociateSkillDTO> associateSkillDTOs = new ArrayList<AssociateSkillDTO>();
@@ -64,6 +77,12 @@ public class AssociateSkillService implements IAssociateSkillService {
 		return associateSkillDTOs;
 	}
 
+	/**
+	 * method to delete an associate skills
+	 * 
+	 * @param associateId associate id
+	 * @return status
+	 */
 	@Override
 	public boolean deleteAssociateSkills(Long associateId) {
 		boolean status = false;
@@ -77,6 +96,11 @@ public class AssociateSkillService implements IAssociateSkillService {
 		return status;
 	}
 
+	/**
+	 * method to find all associate's skills
+	 * 
+	 * @return skills
+	 */
 	@Override
 	public List<AssociateSkillDTO> findAllAssociateSkills() {
 		List<AssociateSkillDTO> associateSkillDTOs = new ArrayList<>();

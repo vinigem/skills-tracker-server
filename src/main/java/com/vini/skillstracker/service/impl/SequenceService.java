@@ -14,6 +14,7 @@ import com.vini.skillstracker.service.ISequenceService;
 
 /**
  * SequenceService implementation
+ * 
  * @author Vinit Kumar
  *
  */
@@ -24,7 +25,10 @@ public class SequenceService implements ISequenceService {
 	private MongoOperations mongo;
 
 	/**
-	 * update and return new sequence
+	 * method to get next sequence number
+	 * 
+	 * @param seqName the sequence name
+	 * @return sequence number
 	 */
 	public Long getNextSequence(String seqName) {
 		CustomSequences sequences = mongo.findAndModify(query(where("_id").is(seqName)), new Update().inc("seq", 1),

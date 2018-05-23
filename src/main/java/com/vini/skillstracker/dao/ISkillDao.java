@@ -11,6 +11,10 @@ import com.vini.skillstracker.model.Skill;
  */
 public interface ISkillDao extends MongoRepository<Skill, String> {
 
+	/**
+	 * delete skill by skill id
+	 * @param skillId the skill id
+	 */
 	void deleteBySkillId(Long skillId);
 
 }

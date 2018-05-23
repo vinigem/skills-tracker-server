@@ -1,8 +1,14 @@
 package com.vini.skillstracker.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
+/**
+ * Associate DTO
+ * @author Vinit Kumar
+ *
+ */
 public class AssociateDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -20,6 +26,10 @@ public class AssociateDTO implements Serializable {
 	private String strength;
 	private String weakness;
 	private List<AssociateSkillDTO> associateSkills;
+	private String createdBy;
+	private Date createdOn;
+	private String lastUpdatedBy;
+	private Date lastUpdatedOn;
 
 	/**
 	 * @return the id
@@ -29,8 +39,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -44,8 +53,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param associateId
-	 *            the associateId to set
+	 * @param associateId the associateId to set
 	 */
 	public void setAssociateId(Long associateId) {
 		this.associateId = associateId;
@@ -59,8 +67,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -74,8 +81,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param email
-	 *            the email to set
+	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -89,8 +95,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param mobile
-	 *            the mobile to set
+	 * @param mobile the mobile to set
 	 */
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
@@ -104,8 +109,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param gender
-	 *            the gender to set
+	 * @param gender the gender to set
 	 */
 	public void setGender(String gender) {
 		this.gender = gender;
@@ -119,8 +123,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param pic
-	 *            the pic to set
+	 * @param pic the pic to set
 	 */
 	public void setPic(String pic) {
 		this.pic = pic;
@@ -134,8 +137,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param status
-	 *            the status to set
+	 * @param status the status to set
 	 */
 	public void setStatus(String status) {
 		this.status = status;
@@ -149,8 +151,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param level
-	 *            the level to set
+	 * @param level the level to set
 	 */
 	public void setLevel(String level) {
 		this.level = level;
@@ -164,8 +165,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param remarks
-	 *            the remarks to set
+	 * @param remarks the remarks to set
 	 */
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
@@ -179,8 +179,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param strength
-	 *            the strength to set
+	 * @param strength the strength to set
 	 */
 	public void setStrength(String strength) {
 		this.strength = strength;
@@ -194,8 +193,7 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param weakness
-	 *            the weakness to set
+	 * @param weakness the weakness to set
 	 */
 	public void setWeakness(String weakness) {
 		this.weakness = weakness;
@@ -209,16 +207,69 @@ public class AssociateDTO implements Serializable {
 	}
 
 	/**
-	 * @param associateSkills
-	 *            the associateSkills to set
+	 * @param associateSkills the associateSkills to set
 	 */
 	public void setAssociateSkills(List<AssociateSkillDTO> associateSkills) {
 		this.associateSkills = associateSkills;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/**
+	 * @return the createdBy
+	 */
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	/**
+	 * @param createdBy the createdBy to set
+	 */
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	/**
+	 * @return the createdOn
+	 */
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	/**
+	 * @param createdOn the createdOn to set
+	 */
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	/**
+	 * @return the lastUpdatedBy
+	 */
+	public String getLastUpdatedBy() {
+		return lastUpdatedBy;
+	}
+
+	/**
+	 * @param lastUpdatedBy the lastUpdatedBy to set
+	 */
+	public void setLastUpdatedBy(String lastUpdatedBy) {
+		this.lastUpdatedBy = lastUpdatedBy;
+	}
+
+	/**
+	 * @return the lastUpdatedOn
+	 */
+	public Date getLastUpdatedOn() {
+		return lastUpdatedOn;
+	}
+
+	/**
+	 * @param lastUpdatedOn the lastUpdatedOn to set
+	 */
+	public void setLastUpdatedOn(Date lastUpdatedOn) {
+		this.lastUpdatedOn = lastUpdatedOn;
+	}
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -226,7 +277,8 @@ public class AssociateDTO implements Serializable {
 		return "AssociateDTO [id=" + id + ", associateId=" + associateId + ", name=" + name + ", email=" + email
 				+ ", mobile=" + mobile + ", gender=" + gender + ", pic=" + pic + ", status=" + status + ", level="
 				+ level + ", remarks=" + remarks + ", strength=" + strength + ", weakness=" + weakness
-				+ ", associateSkills=" + associateSkills + "]";
+				+ ", associateSkills=" + associateSkills + ", createdBy=" + createdBy + ", createdOn=" + createdOn
+				+ ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn + "]";
 	}
 
 }

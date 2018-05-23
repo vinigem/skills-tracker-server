@@ -1,6 +1,7 @@
 package com.vini.skillstracker.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Associate Skill DTO
@@ -15,7 +16,11 @@ public class AssociateSkillDTO implements Serializable {
 	private Long associateId;
 	private Long skillId;
 	private int value;
-
+	private String createdBy;
+	private Date createdOn;
+	private String lastUpdatedBy;
+	private Date lastUpdatedOn;
+	
 	/**
 	 * @return the id
 	 */
@@ -24,8 +29,7 @@ public class AssociateSkillDTO implements Serializable {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -39,8 +43,7 @@ public class AssociateSkillDTO implements Serializable {
 	}
 
 	/**
-	 * @param associateId
-	 *            the associateId to set
+	 * @param associateId the associateId to set
 	 */
 	public void setAssociateId(Long associateId) {
 		this.associateId = associateId;
@@ -54,8 +57,7 @@ public class AssociateSkillDTO implements Serializable {
 	}
 
 	/**
-	 * @param skillId
-	 *            the skillId to set
+	 * @param skillId the skillId to set
 	 */
 	public void setSkillId(Long skillId) {
 		this.skillId = skillId;
@@ -69,22 +71,76 @@ public class AssociateSkillDTO implements Serializable {
 	}
 
 	/**
-	 * @param value
-	 *            the value to set
+	 * @param value the value to set
 	 */
 	public void setValue(int value) {
 		this.value = value;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/**
+	 * @return the createdBy
+	 */
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	/**
+	 * @param createdBy the createdBy to set
+	 */
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	/**
+	 * @return the createdOn
+	 */
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	/**
+	 * @param createdOn the createdOn to set
+	 */
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	/**
+	 * @return the lastUpdatedBy
+	 */
+	public String getLastUpdatedBy() {
+		return lastUpdatedBy;
+	}
+
+	/**
+	 * @param lastUpdatedBy the lastUpdatedBy to set
+	 */
+	public void setLastUpdatedBy(String lastUpdatedBy) {
+		this.lastUpdatedBy = lastUpdatedBy;
+	}
+
+	/**
+	 * @return the lastUpdatedOn
+	 */
+	public Date getLastUpdatedOn() {
+		return lastUpdatedOn;
+	}
+
+	/**
+	 * @param lastUpdatedOn the lastUpdatedOn to set
+	 */
+	public void setLastUpdatedOn(Date lastUpdatedOn) {
+		this.lastUpdatedOn = lastUpdatedOn;
+	}
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "AssociateSkillDTO [id=" + id + ", associateId=" + associateId + ", skillId=" + skillId + ", value="
-				+ value + "]";
+				+ value + ", createdBy=" + createdBy + ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy
+				+ ", lastUpdatedOn=" + lastUpdatedOn + "]";
 	}
-
+	
 }

@@ -23,8 +23,7 @@ public class CustomSequences {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -38,8 +37,7 @@ public class CustomSequences {
 	}
 
 	/**
-	 * @param seq
-	 *            the seq to set
+	 * @param seq the seq to set
 	 */
 	public void setSeq(Long seq) {
 		this.seq = seq;

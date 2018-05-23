@@ -15,7 +15,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author kumarv19
+ * Associate Model
+ * @author Vinit Kumar
  *
  */
 @Document(collection = "associate")
@@ -63,8 +64,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -78,8 +78,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param associateId
-	 *            the associateId to set
+	 * @param associateId the associateId to set
 	 */
 	public void setAssociateId(Long associateId) {
 		this.associateId = associateId;
@@ -93,8 +92,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -108,8 +106,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param email
-	 *            the email to set
+	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -123,8 +120,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param mobile
-	 *            the mobile to set
+	 * @param mobile the mobile to set
 	 */
 	public void setMobile(Long mobile) {
 		this.mobile = mobile;
@@ -138,8 +134,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param gender
-	 *            the gender to set
+	 * @param gender the gender to set
 	 */
 	public void setGender(String gender) {
 		this.gender = gender;
@@ -153,8 +148,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param pic
-	 *            the pic to set
+	 * @param pic the pic to set
 	 */
 	public void setPic(String pic) {
 		this.pic = pic;
@@ -168,8 +162,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param status
-	 *            the status to set
+	 * @param status the status to set
 	 */
 	public void setStatus(String status) {
 		this.status = status;
@@ -183,8 +176,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param level
-	 *            the level to set
+	 * @param level the level to set
 	 */
 	public void setLevel(String level) {
 		this.level = level;
@@ -198,8 +190,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param remarks
-	 *            the remarks to set
+	 * @param remarks the remarks to set
 	 */
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
@@ -213,8 +204,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param strength
-	 *            the strength to set
+	 * @param strength the strength to set
 	 */
 	public void setStrength(String strength) {
 		this.strength = strength;
@@ -228,8 +218,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param weakness
-	 *            the weakness to set
+	 * @param weakness the weakness to set
 	 */
 	public void setWeakness(String weakness) {
 		this.weakness = weakness;
@@ -243,8 +232,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param createdBy
-	 *            the createdBy to set
+	 * @param createdBy the createdBy to set
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
@@ -258,8 +246,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param createdOn
-	 *            the createdOn to set
+	 * @param createdOn the createdOn to set
 	 */
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
@@ -273,8 +260,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedBy
-	 *            the lastUpdatedBy to set
+	 * @param lastUpdatedBy the lastUpdatedBy to set
 	 */
 	public void setLastUpdatedBy(String lastUpdatedBy) {
 		this.lastUpdatedBy = lastUpdatedBy;
@@ -288,8 +274,7 @@ public class Associate implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedOn
-	 *            the lastUpdatedOn to set
+	 * @param lastUpdatedOn the lastUpdatedOn to set
 	 */
 	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;

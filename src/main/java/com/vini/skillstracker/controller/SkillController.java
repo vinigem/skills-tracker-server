@@ -29,8 +29,7 @@ public class SkillController {
 	/**
 	 * Add a new skill
 	 * 
-	 * @param skillDto
-	 *            the skill dto
+	 * @param skillDto the skill dto
 	 * @return status
 	 */
 	@RequestMapping(value = "/add-skill", method = RequestMethod.POST)
@@ -41,8 +40,7 @@ public class SkillController {
 	/**
 	 * Update an existing skill
 	 * 
-	 * @param skillDto
-	 *            the skill dto
+	 * @param skillDto the skill dto
 	 * @return status
 	 */
 	@RequestMapping(value = "/update-skill", method = RequestMethod.POST)
@@ -53,8 +51,7 @@ public class SkillController {
 	/**
 	 * Delete a skill by id
 	 * 
-	 * @param skillId
-	 *            the skill id
+	 * @param skillId the skill id
 	 * @return status
 	 */
 	@RequestMapping(value = "/delete-skill", method = RequestMethod.POST)

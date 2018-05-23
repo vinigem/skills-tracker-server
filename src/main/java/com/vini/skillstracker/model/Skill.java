@@ -53,8 +53,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -68,8 +67,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param skillId
-	 *            the skillId to set
+	 * @param skillId the skillId to set
 	 */
 	public void setSkillId(Long skillId) {
 		this.skillId = skillId;
@@ -83,8 +81,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param skillName
-	 *            the skillName to set
+	 * @param skillName the skillName to set
 	 */
 	public void setSkillName(String skillName) {
 		this.skillName = skillName;
@@ -98,8 +95,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param createdBy
-	 *            the createdBy to set
+	 * @param createdBy the createdBy to set
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
@@ -113,8 +109,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param createdOn
-	 *            the createdOn to set
+	 * @param createdOn the createdOn to set
 	 */
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
@@ -128,8 +123,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedBy
-	 *            the lastUpdatedBy to set
+	 * @param lastUpdatedBy the lastUpdatedBy to set
 	 */
 	public void setLastUpdatedBy(String lastUpdatedBy) {
 		this.lastUpdatedBy = lastUpdatedBy;
@@ -143,8 +137,7 @@ public class Skill implements Serializable {
 	}
 
 	/**
-	 * @param lastUpdatedOn
-	 *            the lastUpdatedOn to set
+	 * @param lastUpdatedOn the lastUpdatedOn to set
 	 */
 	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;

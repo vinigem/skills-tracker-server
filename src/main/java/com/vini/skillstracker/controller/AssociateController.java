@@ -29,8 +29,7 @@ public class AssociateController {
 	/**
 	 * Add a new Associate
 	 * 
-	 * @param associateDTO
-	 *            the associate dto
+	 * @param associateDTO the associate dto
 	 * @return status
 	 */
 	@RequestMapping(value = "/add-associate", method = RequestMethod.POST)
@@ -41,8 +40,7 @@ public class AssociateController {
 	/**
 	 * Update an Associate
 	 * 
-	 * @param associateDTO
-	 *            the associate dto
+	 * @param associateDTO the associate dto
 	 * @return status
 	 */
 	@RequestMapping(value = "/update-associate", method = RequestMethod.POST)
@@ -53,7 +51,7 @@ public class AssociateController {
 	/**
 	 * find an Associate
 	 * 
-	 * @param associateId
+	 * @param associateId the associate id
 	 * @return associate
 	 */
 	@RequestMapping(value = "/find-associate", method = RequestMethod.POST)
@@ -74,7 +72,7 @@ public class AssociateController {
 	/**
 	 * find an Associate skills
 	 * 
-	 * @param associateId
+	 * @param associateId the associate id
 	 * @return associateSkills
 	 */
 	@RequestMapping(value = "/find-associate-skills", method = RequestMethod.POST)
@@ -85,8 +83,7 @@ public class AssociateController {
 	/**
 	 * Delete an associate by id
 	 * 
-	 * @param associateId
-	 *            the associate id
+	 * @param associateId the associate id
 	 * @return status
 	 */
 	@RequestMapping(value = "/delete-associate", method = RequestMethod.POST)

@@ -23,6 +23,7 @@ import com.vini.skillstracker.service.ISkillService;
 
 /**
  * SkillService implementation
+ * 
  * @author Vinit Kumar
  *
  */
@@ -40,6 +41,12 @@ public class SkillService implements ISkillService {
 	@Autowired
 	private IAssociateSkillService associateSkillService;
 
+	/**
+	 * method to add skill
+	 * 
+	 * @param skillDTO the skill dto
+	 * @return status
+	 */
 	@Override
 	public String addSkill(SkillDTO skillDTO) {
 		String status = null;
@@ -65,6 +72,12 @@ public class SkillService implements ISkillService {
 		return status;
 	}
 
+	/**
+	 * method to update skill
+	 * 
+	 * @param skillDTO the skill dto
+	 * @return status
+	 */
 	@Override
 	public String updateSkill(SkillDTO skillDTO) {
 		String status = null;
@@ -87,6 +100,12 @@ public class SkillService implements ISkillService {
 		return status;
 	}
 
+	/**
+	 * method to delete skill
+	 * 
+	 * @param skillId the skill id
+	 * @return status
+	 */
 	@Override
 	public String deleteSkill(Long skillId) {
 		String status = null;
@@ -101,6 +120,11 @@ public class SkillService implements ISkillService {
 		return status;
 	}
 
+	/**
+	 * method find all skills
+	 * 
+	 * @return skills
+	 */
 	@Override
 	public List<SkillDTO> findAllSkills() {
 		List<SkillDTO> skillDTOList = new ArrayList<>();
@@ -118,6 +142,11 @@ public class SkillService implements ISkillService {
 		return skillDTOList;
 	}
 
+	/**
+	 * method to find all skills count data
+	 * 
+	 * @return skillsCountData
+	 */
 	@Override
 	public Map<String, Integer> findAllSkillsCount() {
 		Map<String, Integer> skillsCount = new HashMap<String, Integer>();
