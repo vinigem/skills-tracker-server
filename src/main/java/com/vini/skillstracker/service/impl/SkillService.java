@@ -21,6 +21,11 @@ import com.vini.skillstracker.service.IAssociateSkillService;
 import com.vini.skillstracker.service.ISequenceService;
 import com.vini.skillstracker.service.ISkillService;
 
+/**
+ * SkillService implementation
+ * @author Vinit Kumar
+ *
+ */
 @Service
 public class SkillService implements ISkillService {
 

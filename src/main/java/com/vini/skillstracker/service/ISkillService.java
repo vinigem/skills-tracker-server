@@ -5,6 +5,11 @@ import java.util.Map;
 
 import com.vini.skillstracker.dto.SkillDTO;
 
+/**
+ * SkillService interface
+ * @author Vinit Kumar
+ *
+ */
 public interface ISkillService {
 
 	String addSkill(SkillDTO skillDTO);

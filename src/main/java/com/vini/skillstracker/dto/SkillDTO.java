@@ -7,7 +7,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author kumarv19
+ * Skill DTO
+ * @author Vinit Kumar
  *
  */
 public class SkillDTO implements Serializable {

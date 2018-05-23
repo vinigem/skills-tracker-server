@@ -16,7 +16,7 @@ import com.vini.skillstracker.service.ISkillService;
 /**
  * Skill Controller to handle all skill related requests
  * 
- * @author kumarv19
+ * @author Vinit Kumar
  *
  */
 @RestController

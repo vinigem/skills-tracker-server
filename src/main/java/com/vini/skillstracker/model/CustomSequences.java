@@ -4,8 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * 
- * @author kumarv19
+ * Custom Sequence Model
+ * @author Vinit Kumar
  *
  */
 @Document(collection = "customSequences")

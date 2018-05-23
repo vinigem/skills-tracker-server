@@ -15,7 +15,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author kumarv19
+ * Skill Model
+ * @author Vinit Kumar
  *
  */
 @Document(collection = "skill")

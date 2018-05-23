@@ -5,6 +5,11 @@ import java.util.List;
 import com.vini.skillstracker.dto.AssociateDTO;
 import com.vini.skillstracker.dto.AssociateSkillDTO;
 
+/**
+ * AssociateService interface
+ * @author Vinit Kumar
+ *
+ */
 public interface IAssociateService {
 
 	String addAssociate(AssociateDTO associateDTO);

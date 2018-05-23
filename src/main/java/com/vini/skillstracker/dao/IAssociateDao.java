@@ -6,6 +6,11 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.vini.skillstracker.model.Associate;
 
+/**
+ * AssociateDao interface
+ * @author Vinit Kumar
+ *
+ */
 public interface IAssociateDao extends MongoRepository<Associate, String> {
 
 	Associate findByAssociateId(Long associateId);

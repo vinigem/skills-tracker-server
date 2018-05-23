@@ -13,6 +13,11 @@ import com.vini.skillstracker.dto.AssociateSkillDTO;
 import com.vini.skillstracker.model.AssociateSkill;
 import com.vini.skillstracker.service.IAssociateSkillService;
 
+/**
+ * AssociatSkilleService implementation
+ * @author Vinit Kumar
+ *
+ */
 @Service
 public class AssociateSkillService implements IAssociateSkillService {
 

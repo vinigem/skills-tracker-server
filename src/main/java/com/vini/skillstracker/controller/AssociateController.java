@@ -16,7 +16,7 @@ import com.vini.skillstracker.service.IAssociateService;
 /**
  * Associate Controller to handle all associate related requests
  * 
- * @author kumarv19
+ * @author Vinit Kumar
  *
  */
 @RestController

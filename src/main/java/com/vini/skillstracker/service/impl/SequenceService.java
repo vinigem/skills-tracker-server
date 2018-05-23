@@ -12,6 +12,11 @@ import org.springframework.stereotype.Service;
 import com.vini.skillstracker.model.CustomSequences;
 import com.vini.skillstracker.service.ISequenceService;
 
+/**
+ * SequenceService implementation
+ * @author Vinit Kumar
+ *
+ */
 @Service
 public class SequenceService implements ISequenceService {
 

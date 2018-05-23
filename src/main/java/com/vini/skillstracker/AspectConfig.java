@@ -7,6 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The Aspect configure class for logging
+ * @author Vinit Kumar
+ *
+ */
 @Aspect
 @Configuration
 public class AspectConfig {

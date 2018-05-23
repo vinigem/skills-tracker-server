@@ -11,7 +11,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author kumarv19
+ * Associate Skill Model
+ * @author Vinit Kumar
  *
  */
 @Document(collection = "associate_skill")

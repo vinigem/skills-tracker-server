@@ -1,5 +1,10 @@
 package com.vini.skillstracker;
 
+/**
+ * The App Constants file
+ * @author Vinit Kumar
+ *
+ */
 public final class AppConstant {
 	
 	private AppConstant() {}
