@@ -16,7 +16,7 @@ import com.vini.skillstracker.service.IAssociateSkillService;
 
 @Service
 public class AssociateSkillService implements IAssociateSkillService {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(AssociateSkillService.class.getName());
 
 	@Autowired
@@ -31,7 +31,11 @@ public class AssociateSkillService implements IAssociateSkillService {
 
 				BeanUtils.copyProperties(associateSkillDTO, associateSkill);
 
-				associateSkillDao.save(associateSkill);
+				if (associateSkill.getId() != null && associateSkill.getValue() == 0) {
+					associateSkillDao.delete(associateSkill);
+				} else {
+					associateSkillDao.save(associateSkill);
+				}
 			}
 			status = true;
 		} catch (Exception e) {
