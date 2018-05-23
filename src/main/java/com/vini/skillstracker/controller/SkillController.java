@@ -1,6 +1,7 @@
 package com.vini.skillstracker.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -69,6 +70,16 @@ public class SkillController {
 	@RequestMapping(value = "/find-all-skills", method = RequestMethod.GET)
 	public @ResponseBody List<SkillDTO> findAllSkills() {
 		return skillService.findAllSkills();
+	}
+	
+	/**
+	 * get all skills count
+	 * 
+	 * @return skillsCount
+	 */
+	@RequestMapping(value = "/find-all-skills-count", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Integer> findAllSkillsCount() {
+		return skillService.findAllSkillsCount();
 	}
 
 }

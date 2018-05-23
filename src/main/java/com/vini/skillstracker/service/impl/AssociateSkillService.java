@@ -2,7 +2,6 @@ package com.vini.skillstracker.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -71,6 +70,23 @@ public class AssociateSkillService implements IAssociateSkillService {
 			status = false;
 		}
 		return status;
+	}
+
+	@Override
+	public List<AssociateSkillDTO> findAllAssociateSkills() {
+		List<AssociateSkillDTO> associateSkillDTOs = new ArrayList<>();
+		try {
+			List<AssociateSkill> associateSkills = associateSkillDao.findAll();
+
+			for (AssociateSkill associateSkill : associateSkills) {
+				AssociateSkillDTO associateSkillDTO = new AssociateSkillDTO();
+				BeanUtils.copyProperties(associateSkill, associateSkillDTO);
+				associateSkillDTOs.add(associateSkillDTO);
+			}
+		} catch (Exception e) {
+			LOGGER.error("Error while fetching all associate skills. \n{}", e);
+		}
+		return associateSkillDTOs;
 	}
 
 }

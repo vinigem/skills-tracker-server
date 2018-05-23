@@ -1,7 +1,6 @@
 package com.vini.skillstracker.service;
 
 import java.util.List;
-
 import com.vini.skillstracker.dto.AssociateSkillDTO;
 
 public interface IAssociateSkillService {
@@ -11,5 +10,7 @@ public interface IAssociateSkillService {
 	List<AssociateSkillDTO> findAssociateSkills(Long associateId);
 
 	boolean deleteAssociateSkills(Long associateId);
+
+	List<AssociateSkillDTO> findAllAssociateSkills();
 
 }

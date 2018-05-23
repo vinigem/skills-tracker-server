@@ -1,6 +1,7 @@
 package com.vini.skillstracker.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.vini.skillstracker.dto.SkillDTO;
 
@@ -13,5 +14,7 @@ public interface ISkillService {
 	String deleteSkill(Long skillId);
 
 	List<SkillDTO> findAllSkills();
+
+	Map<String, Integer> findAllSkillsCount();
 
 }

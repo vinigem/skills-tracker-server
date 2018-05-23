@@ -17,14 +17,6 @@ public interface IAssociateService {
 
 	List<AssociateDTO> findAllAssociates();
 
-	List<AssociateDTO> searchByName(String name);
-
-	List<AssociateDTO> searchByStrongSkills(String skillName);
-
-	AssociateDTO searchByMobile(Long mobile);
-
-	AssociateDTO searchByEmail(String email);
-
 	List<AssociateSkillDTO> findAssociateSkills(Long associateId);
 
 }
