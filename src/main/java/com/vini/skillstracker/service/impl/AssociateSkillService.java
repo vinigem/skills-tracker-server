@@ -3,6 +3,8 @@ package com.vini.skillstracker.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import com.vini.skillstracker.service.IAssociateSkillService;
 
 @Service
 public class AssociateSkillService implements IAssociateSkillService {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AssociateSkillService.class.getName());
 
 	@Autowired
 	private IAssociateSkillDao associateSkillDao;
@@ -31,7 +35,8 @@ public class AssociateSkillService implements IAssociateSkillService {
 			}
 			status = true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error("Error while saving associate skills.\n{}", e);
+			status = false;
 		}
 		return status;
 	}
@@ -49,6 +54,19 @@ public class AssociateSkillService implements IAssociateSkillService {
 		}
 
 		return associateSkillDTOs;
+	}
+
+	@Override
+	public boolean deleteAssociateSkills(Long associateId) {
+		boolean status = false;
+		try {
+			associateSkillDao.deleteByAssociateId(associateId);
+			status = true;
+		} catch (Exception e) {
+			LOGGER.error("Error while deleting associate skills.\n{}", e);
+			status = false;
+		}
+		return status;
 	}
 
 }

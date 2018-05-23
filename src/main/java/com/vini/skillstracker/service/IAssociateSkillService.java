@@ -10,4 +10,6 @@ public interface IAssociateSkillService {
 
 	List<AssociateSkillDTO> findAssociateSkills(Long associateId);
 
+	boolean deleteAssociateSkills(Long associateId);
+
 }

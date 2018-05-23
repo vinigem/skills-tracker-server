@@ -69,7 +69,10 @@ public class AssociateService implements IAssociateService {
 			BeanUtils.copyProperties(associateDTO, associate);
 
 			associateDao.save(associate);
-			status = AppConstant.SUCCESS;
+			
+			boolean success = associateSkillService.saveAssociateSkills(associateDTO.getAssociateSkills());
+			
+			status = success ? AppConstant.SUCCESS : AppConstant.FAILURE;
 
 		} catch (DuplicateKeyException de) {
 			status = AppConstant.EXIST;
@@ -92,7 +95,10 @@ public class AssociateService implements IAssociateService {
 		String status = null;
 		try {
 			associateDao.deleteByAssociateId(associateId);
-			status = AppConstant.SUCCESS;
+			
+			boolean success = associateSkillService.deleteAssociateSkills(associateId);
+			
+			status = success ? AppConstant.SUCCESS : AppConstant.FAILURE;
 
 		} catch (Exception e) {
 			status = AppConstant.FAILURE;

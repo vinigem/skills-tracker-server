@@ -10,4 +10,6 @@ public interface IAssociateSkillDao extends MongoRepository<AssociateSkill, Stri
 
 	List<AssociateSkill> findByAssociateId(Long associateId);
 
+	void deleteByAssociateId(Long associateId);
+
 }

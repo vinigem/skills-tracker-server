@@ -81,5 +81,17 @@ public class AssociateController {
 	public @ResponseBody List<AssociateSkillDTO> findAssociateSkills(@RequestBody Long associateId) {
 		return associateService.findAssociateSkills(associateId);
 	}
+	
+	/**
+	 * Delete an associate by id
+	 * 
+	 * @param associateId
+	 *            the associate id
+	 * @return status
+	 */
+	@RequestMapping(value = "/delete-associate", method = RequestMethod.POST)
+	public @ResponseBody String deleteAssociate(@RequestBody Long associateId) {
+		return associateService.deleteAssociate(associateId);
+	}
 
 }
