@@ -78,6 +78,22 @@ public class SkillServiceTest {
 			fail("Exception");
 		}
 	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.SkillService#addSkill(com.vini.skillstracker.dto.SkillDTO)}.
+	 */
+	@Test
+	public void testAddSkillException() {
+		SkillDTO skillDTO = new SkillDTO();
+		try {
+			Mockito.when(skillDao.save(Mockito.any(Skill.class))).thenThrow(new NullPointerException());
+			Mockito.when(sequenceService.getNextSequence(Mockito.anyString())).thenReturn(1L);
+			assertEquals(AppConstant.FAILURE, skillService.addSkill(skillDTO));
+			
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
 
 	/**
 	 * Test method for {@link com.vini.skillstracker.service.impl.SkillService#updateSkill(com.vini.skillstracker.dto.SkillDTO)}.
@@ -93,6 +109,20 @@ public class SkillServiceTest {
 			Mockito.when(skillDao.save(Mockito.any(Skill.class))).thenThrow(new DuplicateKeyException(""));
 			Mockito.when(sequenceService.getNextSequence(Mockito.anyString())).thenReturn(1L);
 			assertEquals(AppConstant.EXIST, skillService.updateSkill(skillDTO));
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.SkillService#updateSkill(com.vini.skillstracker.dto.SkillDTO)}.
+	 */
+	@Test
+	public void testUpdateSkillException() {
+		SkillDTO skillDTO = new SkillDTO();
+		try {
+			Mockito.when(skillDao.save(Mockito.any(Skill.class))).thenThrow(new NullPointerException());
+			assertEquals(AppConstant.FAILURE, skillService.updateSkill(skillDTO));
 		} catch (Exception e) {
 			fail("Exception");
 		}
@@ -123,6 +153,21 @@ public class SkillServiceTest {
 		skills.add(new Skill());
 		try {
 			Mockito.when(skillDao.findAll()).thenReturn(skills);
+			assertNotNull(skillService.findAllSkills());
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.SkillService#findAllSkills()}.
+	 */
+	@Test
+	public void testFindAllSkillsException() {
+		List<Skill> skills = new ArrayList<Skill>();
+		skills.add(new Skill());
+		try {
+			Mockito.when(skillDao.findAll()).thenThrow(new NullPointerException());
 			assertNotNull(skillService.findAllSkills());
 		} catch (Exception e) {
 			fail("Exception");

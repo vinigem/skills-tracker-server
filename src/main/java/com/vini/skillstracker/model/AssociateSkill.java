@@ -150,16 +150,4 @@ public class AssociateSkill implements Serializable {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "AssociateSkill [id=" + id + ", associateId=" + associateId + ", skillId=" + skillId + ", value=" + value
-				+ ", createdBy=" + createdBy + ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy
-				+ ", lastUpdatedOn=" + lastUpdatedOn + "]";
-	}
-
 }

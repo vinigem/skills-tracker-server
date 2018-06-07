@@ -279,19 +279,5 @@ public class Associate implements Serializable {
 	public void setLastUpdatedOn(Date lastUpdatedOn) {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Associate [associateId=" + associateId + ", name=" + name + ", email=" + email + ", mobile=" + mobile
-				+ ", gender=" + gender + ", pic=" + pic + ", status=" + status + ", level=" + level + ", remarks="
-				+ remarks + ", strength=" + strength + ", weakness=" + weakness + ", createdBy=" + createdBy
-				+ ", createdOn=" + createdOn + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdatedOn=" + lastUpdatedOn
-				+ "]";
-	}
-
+	
 }

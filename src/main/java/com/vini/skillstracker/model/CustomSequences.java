@@ -43,14 +43,4 @@ public class CustomSequences {
 		this.seq = seq;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "CustomSequences [id=" + id + ", seq=" + seq + "]";
-	}
-
 }

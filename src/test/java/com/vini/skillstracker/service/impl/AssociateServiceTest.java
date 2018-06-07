@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -77,6 +78,22 @@ public class AssociateServiceTest {
 			fail("Exception");
 		}
 	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.AssociateService#addAssociate(com.vini.skillstracker.dto.AssociateDTO)}.
+	 */
+	@Test
+	public void testAddAssociateException() {
+		AssociateDTO associateDTO = new AssociateDTO();
+		AssociateSkillDTO associateSkillDTO = new AssociateSkillDTO();
+		associateDTO.setAssociateSkills(Arrays.asList(associateSkillDTO));
+		try {
+			Mockito.when(associateDao.save(Mockito.any(Associate.class))).thenThrow(new NullPointerException());
+			assertEquals(AppConstant.FAILURE, associateService.addAssociate(associateDTO));
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
 
 	/**
 	 * Test method for {@link com.vini.skillstracker.service.impl.AssociateService#updateAssociate(com.vini.skillstracker.dto.AssociateDTO)}.
@@ -101,6 +118,22 @@ public class AssociateServiceTest {
 			fail("Exception");
 		}
 	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.AssociateService#updateAssociate(com.vini.skillstracker.dto.AssociateDTO)}.
+	 */
+	@Test
+	public void testUpdateAssociateException() {
+		AssociateDTO associateDTO = new AssociateDTO();
+		AssociateSkillDTO associateSkillDTO = new AssociateSkillDTO();
+		associateDTO.setAssociateSkills(Arrays.asList(associateSkillDTO));
+		try {
+			Mockito.when(associateDao.save(Mockito.any(Associate.class))).thenThrow(new NullPointerException());
+			assertEquals(AppConstant.FAILURE, associateService.updateAssociate(associateDTO));
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
 
 	/**
 	 * Test method for {@link com.vini.skillstracker.service.impl.AssociateService#deleteAssociate(java.lang.Long)}.
@@ -113,6 +146,20 @@ public class AssociateServiceTest {
 			assertEquals(AppConstant.SUCCESS, associateService.deleteAssociate(123456L));
 			
 			Mockito.doNothing().when(associateDao).deleteByAssociateId(Mockito.anyLong());
+			Mockito.when(associateSkillService.deleteAssociateSkills(Mockito.anyLong())).thenReturn(false);
+			assertEquals(AppConstant.FAILURE, associateService.deleteAssociate(123456L));
+		} catch (Exception e) {
+			fail("Exception");
+		}
+	}
+	
+	/**
+	 * Test method for {@link com.vini.skillstracker.service.impl.AssociateService#deleteAssociate(java.lang.Long)}.
+	 */
+	@Test
+	public void testDeleteAssociateException() {
+		try {
+			Mockito.doThrow(new NullPointerException()).when(associateDao).deleteByAssociateId(Mockito.anyLong());
 			Mockito.when(associateSkillService.deleteAssociateSkills(Mockito.anyLong())).thenReturn(false);
 			assertEquals(AppConstant.FAILURE, associateService.deleteAssociate(123456L));
 		} catch (Exception e) {
@@ -139,7 +186,9 @@ public class AssociateServiceTest {
 	@Test
 	public void testFindAllAssociates() {
 		try {
-			Mockito.when(associateDao.findAll()).thenReturn(new ArrayList<Associate>());
+			List<Associate> associates = new ArrayList<Associate>();
+			associates.add(new Associate());
+			Mockito.when(associateDao.findAll()).thenReturn(associates);
 			assertNotNull(associateService.findAllAssociates());
 		} catch (Exception e) {
 			fail("Exception");
